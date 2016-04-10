@@ -1,9 +1,21 @@
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
 
+.todo-container {
+    margin: 10px;
+}
+
 .todo-list .strike {
     text-decoration: line-through;
 }
 
-.todo-list form {
-    display: inline;
+.todo-list .task-text {
+    float: left;
+}
+
+.todo-list .task-control {
+    float: right;
+}
+
+.todo-list .clear {
+    clear: both;
 }

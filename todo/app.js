@@ -49,14 +49,23 @@ TodoList.prototype.getItems = function() {
     return this.items;
 };
 
+TodoList.prototype.getItemCount = function() {
+    return this.items.length;
+};
+
 angular.module('sandbox', [])
 .controller('TodoController', function() {
     this.items = new TodoList();
-    this.items.add("Sample Task to do");
+    this.items.add("Sample task #1");
+    this.items.add("Sample task #2");
+
+    this.getItemCount = function() {
+        return this.items.getItemCount();
+    };
 })
 .controller('ListController', function($scope) {
     $scope.newItemText = "";
-    $scope.items = new TodoList();
+    $scope.items = $scope.items || new TodoList();
 
     $scope.getItems = function() {
         return $scope.items.getItems();

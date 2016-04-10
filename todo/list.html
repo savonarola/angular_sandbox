@@ -1,37 +1,35 @@
 <div class="todo-list">
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="input-group">
-                <input type="text" class="form-control" ng-model="newItemText" ng-enter="addNewItem()" placeholder="Some task to do"></input>
-                <span class="input-group-btn">
-                    <button class="btn btn-default" ng-click="removeDone()">
-                        <span class="glyphicon glyphicon-filter"></span>
+    <form class="form-inline">
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="newItemText" ng-enter="addNewItem()" placeholder="Some task to do"></input>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-default" ng-click="removeDone()">
+            <span class="glyphicon glyphicon-filter"></span>
+        </button>
+      </div>
+    </form>
+    <div>
+        <ul>
+            <li ng-repeat="item in getItems()">
+                <div class="task-text">
+                    <span ng-class="{strike: item.isDone()}">{{item.text}}</span>
+                </div>
+                <div class="task-control">
+                    <button class="btn btn-default" ng-click="remove(item)">
+                        <span class="glyphicon glyphicon-trash"></span>
                     </button>
-                </span>
-            </div>
-        </div>
-        <div class="col-lg-6">
-        </div>
+                </div>
+                <div class="task-control">
+                    <button class="btn btn-default" ng-click="setDone(item)" ng-show="!item.isDone()" >
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                    <button class="btn btn-default" ng-click="setUndone(item)" ng-show="item.isDone()">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <div class="clear" />
+            </li>
+        </ul>
     </div>
-    <table>
-    <tr ng-repeat="item in getItems()">
-        <td>
-            <span ng-class="{strike: item.isDone()}">{{item.text}}</span>
-        </td>
-        <td>
-            <button class="btn btn-default" ng-click="remove(item)">
-                <span class="glyphicon glyphicon-trash"></span>
-            </button>
-        </td>
-        <td>
-            <button class="btn btn-default" ng-click="setDone(item)" ng-show="!item.isDone()" >
-                <span class="glyphicon glyphicon-ok"></span>
-            </button>
-            <button class="btn btn-default" ng-click="setUndone(item)" ng-show="item.isDone()">
-                <span class="glyphicon glyphicon-remove"></span>
-            </button>
-        </td>
-        </li>
-    </tr>
-    </table>
 </div>
