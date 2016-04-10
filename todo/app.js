@@ -45,14 +45,6 @@ TodoList.prototype.removeDone = function() {
     this.items = newItems;
 };
 
-TodoList.prototype.setDone = function(item) {
-    item.setDone();
-};
-
-TodoList.prototype.setUndone = function(item) {
-    item.setUndone();
-};
-
 TodoList.prototype.getItems = function() {
     return this.items;
 };
@@ -84,11 +76,11 @@ angular.module('sandbox', [])
     };
 
     $scope.setDone = function(item) {
-        this.items.setDone(item);
+        item.setDone();
     };
 
     $scope.setUndone = function(item) {
-        this.items.setUndone(item);
+        item.setUndone();
     };
 })
 .directive('list', function() {
