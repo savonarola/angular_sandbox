@@ -12,9 +12,7 @@
     <div>
         <ul>
             <li ng-repeat="item in getItems()">
-                <div class="task-text">
-                    <span ng-class="{strike: item.isDone()}">{{item.text}}</span>
-                </div>
+                <span ng-class="{strike: item.isDone()}">{{item.text}}</span>
                 <div class="task-control">
                     <button class="btn btn-default" ng-click="remove(item)">
                         <span class="glyphicon glyphicon-trash"></span>

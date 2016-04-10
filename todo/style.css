@@ -8,10 +8,6 @@
     text-decoration: line-through;
 }
 
-.todo-list .task-text {
-    float: left;
-}
-
 .todo-list .task-control {
     float: right;
 }
