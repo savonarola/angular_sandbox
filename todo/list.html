@@ -24,10 +24,10 @@
             </button>
         </td>
         <td>
-            <button class="btn btn-default" ng-click="item.setDone()" ng-show="!item.isDone()" >
+            <button class="btn btn-default" ng-click="setDone(item)" ng-show="!item.isDone()" >
                 <span class="glyphicon glyphicon-ok"></span>
             </button>
-            <button class="btn btn-default" ng-click="item.setUndone()" ng-show="item.isDone()">
+            <button class="btn btn-default" ng-click="setUndone(item)" ng-show="item.isDone()">
                 <span class="glyphicon glyphicon-remove"></span>
             </button>
         </td>
