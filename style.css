@@ -1,0 +1,9 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
+
+.todo-list .strike {
+    text-decoration: line-through;
+}
+
+.todo-list form {
+    display: inline;
+}
